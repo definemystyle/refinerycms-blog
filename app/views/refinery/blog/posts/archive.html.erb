@@ -1,6 +1,6 @@
 <% content_for :title, "#{t('.blog_archive_for', :date => @archive_date.strftime('%B %Y'))}" %>
 
-<% content_for :body_content_left do %>
+<% content_for :body do %>
   <h1><%= t('.blog_archive_for', :date => @archive_date.strftime('%B %Y')) %></h1>
   <% if @posts.any? %>
     <section id="blog_posts">
@@ -11,7 +11,7 @@
   <% end %>
 <% end %>
 
-<%= render :partial => '/refinery/blog/shared/body_content_right' %>
+<%= render '/refinery/blog/shared/body_content_right' %>
 
-<%= render :partial => "/refinery/content_page" %>
+<%= render "/refinery/content_page" %>
 <% content_for :stylesheets, stylesheet_link_tag('refinery/blog/frontend') %>
